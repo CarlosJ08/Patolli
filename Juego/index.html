@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Patolli</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<link rel="stylesheet" type="text/css" href="Estilos/Patolli.css">
+	<link rel="stylesheet" type="text/css" href="Estilos/Configuracion.css">
+	<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div>
+		<div id="interaccion">
+			<p id="txtJugador" class="txt"></p>
+			
+			<button id="lanzarCaña" class="btn btn-success">Lanzar caña</button>
+			<button id="btnJugador" type="button" class="btn btn-light" data-toggle="modal"
+				data-target="#exampleModal">
+				<img src="../Estilos/img/avatar.png"> Jugadores
+			</button>
+			<div id="caña1" class="caña"></div>
+			<div id="caña2" class="caña"></div>
+			<div id="caña3" class="caña"></div>
+			<div id="caña4" class="caña"></div>
+			<div id="caña5" class="caña"></div>
+			<p id="txtAvanzar"></p>
+			<div class="Puntuaciones">
+				<label id="NJugador1"></label><br>
+				<label id="ApuestaJugador1"></label><br>
+			
+				<label id="NJugador2"></label><br>
+				
+				<label id="ApuestaJugador2"></label><br>
+				<label id="NJugador3"></label><br>
+				<label id="ApuestaJugador3"></label><br>
+			
+				<label id="NJugador4"></label><br>
+					
+				<label id="ApuestaJugador4"></label>
+			<div id="divBanco">
+				<div id="imgBanco"><label id="CantidadBanco">0</label></div>
+				
+				
+			</div>
+			</div>
+		</div>
+		
+		<div id="tablero">
+			<div id="vertical"></div>
+			<div id="horizontal"></div>
+		</div>
+		<button id="lanzarCaña" class="btn btn-success">Lanzar caña</button>
+
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Jugadores</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<div class="modal-body">
+
+						<div id="forms">
+							<div class="frmJugador">
+
+								<form id="Jugador1" class="frmJugador" style="display:none">
+									<div class="form-group">
+										<b>Jugador 1</b><br>
+										<label for="Nombre">Nombre</label>
+										<input  class="form-control" id="NombreJugador1">
+											<div class="radios">
+												<input class="form-check-input"  type="radio" id="J1Color1" name="inlineRadioOptions">
+												<label  id="LJ1Color1" class="form-check-label" for="J1Color1">Rojo</label>										
+												<input class="form-check-input" type="radio" id="J1Color2" name="inlineRadioOptions">
+												<label  id="LJ1Color2" class="form-check-label" for="J1Color2">Rojo</label>
+												<input class="form-check-input" type="radio" id="J1Color3" name="inlineRadioOptions">
+												<label  id="LJ1Color3" class="form-check-label" for="J1Color3">Rojo</label>
+												<input class="form-check-input" type="radio" id="J1Color4" name="inlineRadioOptions">
+												<label id="LJ1Color4" class="form-check-label" for="J1Color4">Rojo</label>
+											</div>
+												
+									</div>
+									<div class="form-group">
+										<br>
+										<br>	
+										<label for="Apuesta">Apuestas</label>
+										<input type="number" class="form-control" id="Apuesta">
+									</div>
+									<div class="form-group">
+										<label >Fichas por jugador</label>
+										<input type="number" min="2" max="6" value="2" class="form-control" id="NumeroFichas">
+									</div>
+								</form>
+								<form class="form-group">
+								<div id="Jugador2" class="frmJugador" style="display:none">
+									<br>
+									<br>
+									<b>Jugador 2</b><br>
+									<label for="Nombre">Nombre</label><br>
+										<input  class="form-control" id="NombreJugador2">
+									<div class="radios">
+										<input class="form-check-input" type="radio" id="J2Color1" name="inlineRadioOptions">
+										<label  id="LJ2Color1" class="form-check-label" for="J2Color1">Rojo</label>
+										<input class="form-check-input" type="radio" id="J2Color2" name="inlineRadioOptions">
+										<label  id="LJ2Color2" class="form-check-label" for="J2Color2">Rojo</label>
+										<input class="form-check-input" type="radio" id="J2Color3" name="inlineRadioOptions">
+										<label  id="LJ2Color3" class="form-check-label" for="J2Color3" >Rojo</label>
+										<input class="form-check-input" type="radio" id="J2Color4" name="inlineRadioOptions">
+										<label id="LJ2Color4" class="form-check-label" for="J2Color4">Rojo</label>
+										
+									</div>
+								</div>
+								</form>
+								<form class="frmJugador" class="form-group">
+								<div id="Jugador3" style="display:none">
+									
+									<b>Jugador 3</b><br>
+									<label for="Nombre">Nombre</label><br>
+										<input class="form-control" id="NombreJugador3">
+									<input class="form-check-input" type="radio" id="J3Color1" name="inlineRadioOptions">
+										<label  id="LJ3Color1" class="form-check-label" for="J3Color1">Rojo</label>
+										<input class="form-check-input" type="radio" id="J3Color2" name="inlineRadioOptions">
+										<label  id="LJ3Color2" class="form-check-label" for="J3Color2">Rojo</label>
+										<input class="form-check-input" type="radio" id="J3Color3" name="inlineRadioOptions">
+										<label  id="LJ3Color3" class="form-check-label" for="J3Color3">Rojo</label>
+										<input class="form-check-input" type="radio" id="J3Color4" name="inlineRadioOptions">
+										<label id="LJ3Color4" class="form-check-label" for="J3Color4">Rojo</label>
+						
+								</div>
+							
+							</form>
+								<form class="form-group">
+								<div id="Jugador4" style="display:none">
+									<b>Jugador 4</b><br>
+									<label for="Nombre">Nombre</label><br>
+										<input type="email" class="form-control" id="NombreJugador4">
+									<input class="form-check-input" type="radio" id="J4Color1" name="inlineRadioOptions">
+										<label  id="LJ4Color1" class="form-check-label" for="J4Color1">Rojo</label>
+										<input class="form-check-input" type="radio" id="J4Color2" name="inlineRadioOptions">
+										<label  id="LJ4Color2" class="form-check-label" for="J4Color2">Rojo</label>
+										<input class="form-check-input" type="radio" id="J4Color3" name="inlineRadioOptions">
+										<label  id="LJ4Color3" class="form-check-label" for="J4Color3">Rojo</label>
+										<input class="form-check-input" type="radio" id="J4Color4" name="inlineRadioOptions">
+										<label id="LJ4Color4" class="form-check-label" for="J4Color4">Rojo</label>
+									
+								</div>
+							</form>
+								
+								
+								</div>
+
+							</div>
+
+							
+
+						</div>
+						<div class="modal-footer">
+	
+							<button id="AceptarConfiguracion" type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+</body>
+<script src="Clases/Ficha.js"></script>
+<script src="MVC/visConfiguracion.js"></script>
+<script src="Clases/Configuracion.js"></script>
+<script src="Clases/Banco.js"></script>
+<script src="Clases/Tablero.js"></script>
+<script src="Clases/Casilla.js"></script>
+<script src="Clases/Jugador.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="MVC/Patolli.js"></script>
+<script src="MVC/ControladorPatolli.js"></script>
+<script src="MVC/VistaPatolli.js"></script>
+
+</html>

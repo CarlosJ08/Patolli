@@ -1,0 +1,215 @@
+@media only screen and (min-width: 1390px) {
+	body{
+		zoom:115%;
+	}
+  }
+  .txt{
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	color:black;
+
+  }
+.casillaTipo1{
+
+	animation-duration: 1s;
+	text-align: center;
+	width: 2.5em;
+	height: 2.5em;
+	border: 0.1em solid;
+		margin: 0.4em;
+	position: relative;
+	left: 30em;
+	bottom: 1.4em;
+	margin:none;
+	z-index: 100;
+background-position: center;
+	background-color: rgb(197, 157, 97);
+	z-index: 110;
+}
+.casillaTipo1:hover{
+	opacity: 0.6;
+}
+.casillaTipo2:hover{
+	opacity: 0.6;
+}
+.casillaTipo2{
+
+	animation-duration: 1s;
+	text-align: center;
+	width: 2.5em;
+	height: 2.5em;
+	 border: 0.1em solid;
+	margin: 0.4em;
+	margin-left: 33.2em;
+
+ background-position: center;
+	position: relative;
+	bottom: 41.99em;
+	z-index: 100;
+	background-color: rgba(194,155,97);
+	z-index: 130;
+
+}
+#tablero{
+	
+	display: absolute;
+position: relative;
+left: 35em;
+bottom: 22em;
+	  transform: rotate(45deg);
+	   width: 50em;
+	 height: 50em;
+	 z-index: 110;
+	 
+
+}
+body{
+	background: linear-gradient(#82afe9, #81db75);
+}
+#horizontal{
+	 transform: rotate(90deg);
+	 position: relative;
+	 bottom: 93.32em;
+	 right: 6.1em;
+	 z-index: 101;
+
+}
+	 
+#vertical{
+	 position: relative;
+	 top:17.53em;
+	 left: 7.51em;
+}
+
+#interaccion{
+	position: relative;
+
+float: left;
+z-index: 100;
+
+}
+.caña{
+	width: 8em;
+	height: 10em;
+ 	float: left;
+	background-image:url("img/caña1.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	top: 5em;
+	margin: none;
+	transition: 1s;
+}
+#lanzarCaña{
+	position: relative;
+	right: 38em;
+
+}
+body{
+overflow: hidden;
+
+
+}
+.txt{
+	position: relative;
+	left: 2em;
+	top: 0.5em;
+}
+#btnJugador{
+	
+position: relative;
+right: 34em;
+  background-repeat:no-repeat;
+ text-align: left;
+  background-position:center;
+  z-index: 140;
+  display: none;
+}
+
+
+
+#txtAvanzar{
+	position: relative;
+	top:15em;
+	right: 38em;
+	color: white;
+}
+.Puntuaciones
+{
+	position: relative;
+	top:12em;
+	right: 30em;
+	font-size: 1.3em;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	
+}
+#ColorJugador1{
+	width: 2em;
+	height: 2em;
+	
+}
+
+#NJugador1{
+
+text-align: center;
+color:white;
+padding-left: 1em;
+padding-right: 1em;
+	
+}
+
+#NJugador2{
+
+	text-align: center;
+	color:white;
+
+	padding-left: 1em;
+	padding-right: 1em;
+}
+#ApuestaJugador2{
+	position: relative;
+	left: 30.8em;
+	
+}
+#NJugador4,#NJugador3{
+	position: relative;
+	left: 30.8em;
+	 color: white;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+#ApuestaJugador3,#ApuestaJugador4{
+	position: relative;
+	left: 30.8em;
+}
+#imgBanco{
+	background-image: url("img/banco.png");
+	background-repeat: no-repeat;
+	width: 3em;
+	height: 3em;
+	position: relative;
+	left: 58em;
+	z-index: 200;
+	bottom: 13em;
+}
+#CantidadBanco{
+	position: relative;
+	top: 1.5em;
+	text-align: center;
+}
+#txtAvanzar{
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 1em;
+	color: rgb(167, 5, 5);
+}
+
+@keyframes Animacion2 {
+	from {
+	
+		opacity: 0;
+	  }
+	
+	  to {
+	
+		opacity: 1;
+	  }
+	}

@@ -1,0 +1,104 @@
+#LJ1Color1, #LJ2Color1, #LJ3Color1, #LJ4Color1{
+	animation-duration: 3s;
+	animation: slidein;
+	
+	background-color: white;
+	border: 0.3em solid;
+	border-color: #970000;
+	user-select: none;
+	 color:white;
+	 border-radius: 0.5em;
+
+}
+#J1Color1,#J2Color1, #J3Color1,#J4Color1  {
+	display: none;
+}
+#Jugador2{
+	position: relative;
+	bottom: 3em;
+}
+#J1Color1:checked  + #LJ1Color1, #J2Color1:checked  + #LJ2Color1, #J3Color1:checked  + #LJ3Color1, #J4Color1:checked  + #LJ4Color1{
+	transition: 0.5s;
+	background-color: #970000 ;
+	color: #970000;
+}
+
+
+#LJ1Color2, #LJ2Color2, #LJ3Color2, #LJ4Color2{
+	transition: 0.5s;
+	background-color: white;
+	border: 0.3em solid;
+	border-color: #1c1fda;
+	user-select: none;
+	 color:white;
+	 border-radius: 0.5em;
+}
+#J1Color2,#J2Color2, #J3Color2,#J4Color2{
+	display: none;
+}
+#J1Color2:checked  + #LJ1Color2, #J2Color2:checked  + #LJ2Color2, #J3Color2:checked  + #LJ3Color2, #J4Color2:checked  + #LJ4Color2{
+	transition: 0.5s;
+	background-color: #1c1fda ;
+	color: #1c1fda;
+}
+
+
+#LJ1Color3, #LJ2Color3, #LJ3Color3, #LJ4Color3{
+	transition: 0.5s;
+	background-color: white;
+	border: 0.3em solid;
+	border-color: #43db8f;
+	user-select: none;
+	 color:white;
+	 border-radius: 0.5em;
+}
+#J1Color3, #J2Color3, #J3Color3, #J4Color3{
+	display: none;
+}
+#J1Color3:checked  + #LJ1Color3, #J2Color3:checked  + #LJ2Color3, #J3Color3:checked  + #LJ3Color3, #J4Color3:checked  + #LJ4Color3{
+	transition: 0.5s;
+	background-color: #43db8f ;
+	color: #43db8f;
+}
+
+#LJ1Color4, #LJ2Color4, #LJ3Color4, #LJ4Color4{
+	transition: 0.5s;
+	background-color: white;
+	border: 0.3em solid;
+	border-color: #482058;
+	user-select: none;
+	 color:white;
+	 border-radius: 0.5em;
+}
+#J1Color4,#J2Color4, #J3Color4,#J4Color4{
+	display: none;
+}
+#J1Color4:checked  + #LJ1Color4, #J2Color4:checked  + #LJ2Color4, #J3Color4:checked  + #LJ3Color4, #J4Color4:checked  + #LJ4Color4{
+	transition: 0.5s;
+	background-color: #482058 ;
+	color: #482058;
+}
+
+
+#NombreJugador1, #NombreJugador2, #NombreJugador3,#NombreJugador4 {
+	margin-bottom: 1em;
+
+}
+
+.radios{
+	float: left;
+}
+
+.frmJugador{
+	animation-duration: 1.5s;
+	animation-name: Animacion;
+}
+@keyframes Animacion {
+	from {
+	  opacity: 0.1;
+	}
+  
+	to {
+	  opacity: 1;
+	}
+  }
